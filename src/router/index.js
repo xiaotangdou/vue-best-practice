@@ -8,7 +8,10 @@ export const constantRoutes = [
   {
     path: "/login",
     component: () => import("@/views/login"),
-    hidden: true, // 导航菜单忽略该项
+  },
+  {
+    path: "/",
+    component: () => import("@/views/home"),
   },
 ];
 

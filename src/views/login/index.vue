@@ -5,7 +5,6 @@
     :rules="rules"
     ref="ruleForm"
     label-width="100px"
-    class="demo-ruleForm"
   >
     <el-form-item label="用户名" prop="username">
       <el-input
@@ -47,10 +46,19 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$store.dispatch("user/login", {
-            username: this.username,
-            password: this.password,
-          });
+          this.$store
+            .dispatch("user/login", {
+              username: this.ruleForm.username,
+              password: this.ruleForm.password,
+            })
+            .then(() => {
+              this.$router.push({
+                path: this.$route.query.redirect || "/",
+              });
+            })
+            .catch((error) => {
+              alert(error);
+            });
         }
       });
     },
