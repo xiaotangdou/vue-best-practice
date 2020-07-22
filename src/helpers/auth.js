@@ -13,7 +13,7 @@ function hasPermission(roles, route) {
  * @params routes - 异步加载的路由
  * @params roles - 用户的角色，数组形式
  */
-export function filterAsyncRoutes(routes, roles) {
+function filterAsyncRoutes(routes, roles) {
   const res = [];
 
   // 遍历全部路由
@@ -34,3 +34,5 @@ export function filterAsyncRoutes(routes, roles) {
 
   return res;
 }
+
+export default { filterAsyncRoutes };

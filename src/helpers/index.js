@@ -1,2 +1,2 @@
-export * as storage from "./storage";
-export * as auth from "./auth";
+export { default as storage } from "./storage";
+export { default as auth } from "./auth";

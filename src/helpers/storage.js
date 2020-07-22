@@ -7,26 +7,35 @@ const DEFAULT_COOKIE_OPTS = {
   path: "/",
 };
 
-export function setCookie(key, value, config = DEFAULT_COOKIE_OPTS) {
+function setCookie(key, value, config = DEFAULT_COOKIE_OPTS) {
   return cookies.set(key, value, config);
 }
 
-export function getCookie(key) {
+function getCookie(key) {
   return cookies.get(key);
 }
 
-export function removeCookie() {
+function removeCookie() {
   return cookies.remove(STORAGE_TOKEN_KEY);
 }
 
-export function setToken(value) {
+function setToken(value) {
   return cookies.set(STORAGE_TOKEN_KEY, value, DEFAULT_COOKIE_OPTS);
 }
 
-export function getToken() {
+function getToken() {
   return cookies.get(STORAGE_TOKEN_KEY);
 }
 
-export function removeToken() {
+function removeToken() {
   return cookies.remove(STORAGE_TOKEN_KEY, DEFAULT_COOKIE_OPTS);
 }
+
+export default {
+  setCookie,
+  getCookie,
+  removeCookie,
+  setToken,
+  getToken,
+  removeToken,
+};

@@ -2,7 +2,7 @@ import router from "./router";
 import store from "./store";
 import { storage } from "./helpers";
 
-const ROUTE_WHITELIST = [];
+const ROUTE_WHITELIST = ["/login"];
 
 router.beforeEach(async (to, from, next) => {
   const token = storage.getToken();
