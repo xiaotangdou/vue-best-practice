@@ -1,3 +1,8 @@
+/**
+ * 角色：页面权限 => 功能权限、功能权限
+ * 页面权限(路由权限)：功能权限
+ */
+
 import router from "./router";
 import store from "./store";
 import { storage } from "./helpers";
